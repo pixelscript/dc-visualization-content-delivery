@@ -1,6 +1,10 @@
 # Content Delivery 2 Visualization 
 
-Used to generate a precview of your delivery data
+Used to generate a preview of your delivery data.
+
+![preview](preview.png)
+
+
 
 ## Get started
 
