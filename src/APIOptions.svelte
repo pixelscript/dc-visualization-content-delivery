@@ -6,31 +6,31 @@
   const depthOptions = [
     {
       label: "----",
-      value: ""
+      value: "",
     },
     {
       label: "root",
-      value: "root"
+      value: "root",
     },
     {
       label: "all",
-      value: "all"
-    }
+      value: "all",
+    },
   ];
 
   const formatOptions = [
     {
       label: "----",
-      value: ""
+      value: "",
     },
     {
       label: "linked",
-      value: "linked"
+      value: "linked",
     },
     {
       label: "inlined",
-      value: "inlined"
-    }
+      value: "inlined",
+    },
   ];
 </script>
 
