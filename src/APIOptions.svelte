@@ -2,6 +2,7 @@
   import { createEventDispatcher } from "svelte";
   export let format;
   export let depth;
+  export let v2;
   const dispatch = createEventDispatcher();
   const depthOptions = [
     {
@@ -42,7 +43,8 @@
     box-sizing: border-box;
     color: #333;
   }
-  select {
+  select,
+  input {
     margin-right: 1em;
   }
   nav {
@@ -53,12 +55,20 @@
 </style>
 
 <nav>
+  <label for="v2">v2</label>
+  <input
+    type="checkbox"
+    id="v2"
+    bind:checked={v2}
+    on:change={() => {
+      dispatch('change', { format, depth, v2 });
+    }} />
   <label for="depth">depth</label>
   <select
     id="depth"
     bind:value={depth}
     on:change={() => {
-      dispatch('change', { format, depth });
+      dispatch('change', { format, depth, v2 });
     }}>
     {#each depthOptions as option}
       <option value={option.value}>{option.label}</option>
@@ -69,7 +79,7 @@
     id="format"
     bind:value={format}
     on:change={() => {
-      dispatch('change', { format, depth });
+      dispatch('change', { format, depth, v2 });
     }}>
     {#each formatOptions as option}
       <option value={option.value}>{option.label}</option>

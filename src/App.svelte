@@ -1,14 +1,12 @@
 <script>
-  import { afterUpdate } from "svelte";
   import { CDService } from "./cd.service.js";
   import APIOptions from "./APIOptions.svelte";
   import hljs from "highlight.js/lib/core";
   import json from "highlight.js/lib/languages/json";
   import "highlight.js/styles/github.css";
-  import { vse, id, format, depth, locale } from "./urlparams";
-
+  import * as params from "./urlparams";
+  console.log(params);
   hljs.registerLanguage("json", json);
-  const params = { vse, id, format, depth, locale };
   let service = new CDService(params);
   let error = false;
   let content = {};
@@ -62,8 +60,9 @@
 <main class={error ? 'grid-container error' : 'grid-container'}>
   <div class="tools">
     <APIOptions
-      {format}
-      {depth}
+      v2 = {params.v2}
+      format = {params.format}
+      depth = {params.depth}
       on:change={(e) => {
         service.setParams(e.detail);
         loadData();
