@@ -3,6 +3,10 @@ const vse = sparams.get('vse');
 const id = sparams.get('id');
 const v2 = sparams.get('v2') !== 'false';
 // once we have Nullish Coalescing, this will look much nicer
+const store =
+  sparams.get('store') && sparams.get('store') !== ''
+    ? sparams.get('store')
+    : 'store';
 const format =
   sparams.get('format') && sparams.get('format') !== ''
     ? sparams.get('format')
@@ -12,4 +16,4 @@ const depth =
     ? sparams.get('depth')
     : 'all';
 const locale = sparams.get('locale');
-export { vse, id, format, depth, locale, v2 };
+export { vse, id, format, depth, locale, v2, store };

@@ -63,6 +63,7 @@
       v2 = {params.v2}
       format = {params.format}
       depth = {params.depth}
+      store = {params.store}
       on:change={(e) => {
         service.setParams(e.detail);
         loadData();
