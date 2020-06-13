@@ -1,10 +1,20 @@
-# Content Delivery 2 Visualization 
+# Content Delivery Visualization 
 
 Used to generate a preview of your delivery data.
 
 ![preview](preview.png)
 
+## URL params
 
+### Required
+* `vse` - Staging enviroment to serve content from.
+* `id` - id of content item to load.
+
+### Optional
+* `depth` - Either `root` or `all`. In cdv1 mode these map to `root` and `tree` respectively for the param `scope`.
+* `format` - Either `linked` or `inline`. In cdv1 mode these map to `false` and `true` respectively for the param `fullBodyObject`.
+* `v2` - set to `false` to enable cdv1 mode.
+* `store` - sets the `store` value used in cdv1 mode. Defaults to `store`.
 
 ## Get started
 
