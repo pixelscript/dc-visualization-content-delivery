@@ -27,7 +27,7 @@ export class CDService {
     };
     let scope = this.depth === 'root' ? 'root' : 'tree';
     let fullBodyObject = this.format === 'linked' ? 'false' : 'true';
-    return `${this.constructBase()}?query=${JSON.stringify(query)}&store=${
+    return `${this.constructBase()}?query=${encodeURI(JSON.stringify(query))}&store=${
       this.store
     }&scope=${scope}&fullBodyObject=${fullBodyObject}`;
   }
